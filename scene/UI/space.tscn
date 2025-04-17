@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdq3pluavf4qh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etv88"]
+
+[node name="VSeparator" type="VSeparator"]
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_etv88")

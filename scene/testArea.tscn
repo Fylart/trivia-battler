@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx7hoqnc75ni6"]
+
+[ext_resource type="PackedScene" uid="uid://0amnc5qdungd" path="res://scene/UI/hud.tscn" id="1_s3vku"]
+[ext_resource type="Texture2D" uid="uid://b11w2rcd4nebs" path="res://icon.svg" id="2_gykvt"]
+[ext_resource type="Script" uid="uid://bu3735rmhlv3n" path="res://scene/player.gd" id="3_1d8vo"]
+[ext_resource type="Script" uid="uid://cdb3sfkosjwug" path="res://scene/enemy_spawn_point.gd" id="3_gykvt"]
+
+[node name="TestArea" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("1_s3vku")]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-267, -303)
+color = Color(0.125911, 0.125911, 0.125911, 1)
+polygon = PackedVector2Array(2, 801, 2046, 807, 2041, 1180, -209, 1149, -196, 801)
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(102, 372)
+texture = ExtResource("2_gykvt")
+script = ExtResource("3_1d8vo")
+
+[node name="enemySpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1041, 364)
+gizmo_extents = 46.0
+script = ExtResource("3_gykvt")

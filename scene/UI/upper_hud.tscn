@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://dla2uubcsrnoj"]
+
+[ext_resource type="Texture2D" uid="uid://b11w2rcd4nebs" path="res://icon.svg" id="1_l7crv"]
+[ext_resource type="Script" uid="uid://caefge5skmghu" path="res://scene/UI/time.gd" id="2_g8vc8"]
+[ext_resource type="Script" uid="uid://crd7xk1cppsvw" path="res://scene/UI/score.gd" id="3_p4yup"]
+
+[node name="upperHud" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="life" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 248.0
+offset_bottom = 80.0
+
+[node name="TextureRect" type="TextureRect" parent="life"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_l7crv")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="life"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("1_l7crv")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="life"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("1_l7crv")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -14.0
+offset_right = 14.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 70
+text = "128"
+horizontal_alignment = 1
+script = ExtResource("2_g8vc8")
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+script = ExtResource("3_p4yup")

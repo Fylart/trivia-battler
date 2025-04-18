@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddul47hmhgr2t"]
+[gd_scene load_steps=4 format=3 uid="uid://ddul47hmhgr2t"]
 
 [sub_resource type="GDScript" id="GDScript_v85q2"]
 script/source = "extends Button
@@ -6,6 +6,16 @@ script/source = "extends Button
 
 func _on_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://scene/testArea.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_tkhra"]
+script/source = "extends Button
+
+var credit:PackedScene = preload(\"res://scene/UI/credit.tscn\")
+
+func _on_pressed() -> void:
+	var instance = credit.instantiate()
+	get_parent().get_parent().add_child(instance)
 "
 
 [sub_resource type="GDScript" id="GDScript_8yjp8"]
@@ -50,6 +60,12 @@ theme_override_font_sizes/font_size = 20
 text = "Start"
 script = SubResource("GDScript_v85q2")
 
+[node name="credit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Credit"
+script = SubResource("GDScript_tkhra")
+
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -58,4 +74,5 @@ text = "Quit"
 script = SubResource("GDScript_8yjp8")
 
 [connection signal="pressed" from="VBoxContainer/start" to="VBoxContainer/start" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/credit" to="VBoxContainer/credit" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]

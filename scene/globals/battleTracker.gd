@@ -1,6 +1,8 @@
 extends Node
 signal enemyTakeDmg
 signal playerTakeDmg
+signal playerDied
+
 signal spawnEnemy
 signal replaceBoxes
 signal addTime

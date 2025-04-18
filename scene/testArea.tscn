@@ -6,6 +6,16 @@
 
 [sub_resource type="GDScript" id="GDScript_gykvt"]
 script/source = "extends Node2D
+@onready var gameOver:PackedScene = preload(\"res://scene/UI/gameOver.tscn\")
+@onready var hud: CanvasLayer = $Hud
+
+func _ready() -> void:
+	BattleTracker.playerDied.connect(showGameOver)
+
+func showGameOver():
+	var instance = gameOver.instantiate()
+	hud.add_child(instance)
+	get_tree().paused = true
 "
 
 [node name="TestArea" type="Node2D"]

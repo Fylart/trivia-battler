@@ -1,5 +1,6 @@
 extends Label
 @onready var timer: Timer = $"../Timer"
+@onready var gameOver:PackedScene = preload("res://scene/UI/gameOver.tscn")
 
 func _ready() -> void:
 	BattleTracker.addTime.connect(addTime)
@@ -12,4 +13,6 @@ func addTime():
 	timer.start()
 
 func _on_timer_timeout() -> void:
-	get_tree().quit()
+	var instance = gameOver.instantiate()
+	get_parent().get_parent().add_child(instance)
+	get_tree().paused = true

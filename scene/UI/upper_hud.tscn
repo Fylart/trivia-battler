@@ -48,7 +48,7 @@ texture = ExtResource("1_l7crv")
 expand_mode = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 

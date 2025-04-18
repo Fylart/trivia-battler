@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx7hoqnc75ni6"]
+[gd_scene load_steps=5 format=3 uid="uid://cx7hoqnc75ni6"]
 
 [ext_resource type="PackedScene" uid="uid://0amnc5qdungd" path="res://scene/UI/hud.tscn" id="1_s3vku"]
 [ext_resource type="PackedScene" uid="uid://b28sgax660ecc" path="res://scene/player.tscn" id="2_gykvt"]
 [ext_resource type="Script" uid="uid://cdb3sfkosjwug" path="res://scene/enemy_spawn_point.gd" id="3_gykvt"]
 
+[sub_resource type="GDScript" id="GDScript_gykvt"]
+script/source = "extends Node2D
+"
+
 [node name="TestArea" type="Node2D"]
+script = SubResource("GDScript_gykvt")
 
 [node name="Hud" parent="." instance=ExtResource("1_s3vku")]
 

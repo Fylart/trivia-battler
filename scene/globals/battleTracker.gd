@@ -7,4 +7,4 @@ signal addTime
 signal resumed
 signal gameOver
 
-var score:int
+var score:int = 0

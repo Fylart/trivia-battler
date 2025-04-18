@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgn4wpfpr63d"]
+
+[sub_resource type="GDScript" id="GDScript_mrjlj"]
+script/source = "extends Control
+var scorePath:String = \"user://score.tres\"
+
+func _ready() -> void:
+	var highscore:int
+	
+	if BattleTracker.score > loadScore():
+		highscore = BattleTracker.score
+	else:
+		highscore = loadScore()
+		
+	var savedScore:scoreData = scoreData.new()
+	savedScore.highscore = highscore
+	
+	ResourceSaver.save(savedScore, scorePath)
+	
+func loadScore():
+	if ResourceLoader.exists(scorePath):
+		var scoreResource = load(scorePath) as scoreData
+		return scoreResource.highscore
+	else:
+		return 0
+"
+
+[sub_resource type="GDScript" id="GDScript_ki3ag"]
+script/source = "extends Label
+func _ready() -> void:
+	text = \"Score: \" + str(BattleTracker.score)
+"
+
+[sub_resource type="GDScript" id="GDScript_bdseq"]
+script/source = "extends Label
+func _ready() -> void:
+	var scorePath:String = \"user://score.tres\"
+	if ResourceLoader.exists(scorePath):
+		var scoreResource = load(scorePath) as scoreData
+		text = \"Highscore: \" + str(scoreResource.highscore)
+	else:
+		text = \"Highscore: N/A\"
+"
+
+[sub_resource type="GDScript" id="GDScript_igoyf"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	get_tree().paused = false
+	BattleTracker.score = 0
+	get_tree().change_scene_to_file(\"res://scene/testArea.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_dq5d1"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="GameOver" type="Control"]
+process_mode = 2
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_mrjlj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -42.5
+offset_right = 61.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="score" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Score: 0000"
+horizontal_alignment = 1
+script = SubResource("GDScript_ki3ag")
+
+[node name="highscore" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Highscore: 0000"
+horizontal_alignment = 1
+script = SubResource("GDScript_bdseq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Retry?"
+script = SubResource("GDScript_igoyf")
+
+[node name="quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Quit"
+script = SubResource("GDScript_dq5d1")
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/retry" to="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/retry" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/quit" to="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/quit" method="_on_pressed"]

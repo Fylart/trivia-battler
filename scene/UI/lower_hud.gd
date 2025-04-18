@@ -4,12 +4,6 @@ extends Control
 var questionSet1:Dictionary ={
 	"San binaril si rizal?":"likod",
 	"San binaril si rizal1?":"likod",
-	"San binaril si rizal2?":"likod",
-	"San binaril si rizal3?":"likod",
-	"San binaril si rizal4?":"likod",
-	"San binaril si rizal5?":"likod",
-	"San binaril si rizal6?":"likod",
-	"San binaril si rizal7?":"likod",
 	"Where did rizal studied?":"School"
 }
 
@@ -20,6 +14,8 @@ var questionsKey
 @onready var question: Label = $VBoxContainer/question
 var questionKey:String
 var answer:String
+
+@onready var gameOver:PackedScene = preload("res://scene/UI/gameOver.tscn")
 
 func _ready() -> void:
 	reRollQuestion()
@@ -34,5 +30,7 @@ func reRollQuestion():
 		boxes.answerBoxes()
 		question.text = questionKey
 	else:
-		get_tree().quit()
+		var instance = gameOver.instantiate()
+		get_parent().add_child(instance)
+		get_tree().paused = true
 		

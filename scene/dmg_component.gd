@@ -1,5 +1,6 @@
 extends Node
 @onready var health_ui: ProgressBar = $"../healthUI"
+@onready var gameOver:PackedScene = preload("res://scene/UI/gameOver.tscn")
 @export var damage:int
 var scorePoints = 500
 
@@ -12,4 +13,6 @@ func _ready() -> void:
 func takeDmg():
 	health_ui.value = health_ui.value - damage
 	if health_ui.value <= 0:
-		get_parent().queue_free()
+		var instance = gameOver.instantiate()
+		get_parent().add_child(instance)
+		get_tree().paused = true

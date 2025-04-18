@@ -5,14 +5,11 @@ var scorePoints = 500
 
 
 func _ready() -> void:
-	damage = get_parent().damage
-	BattleTracker.enemyTakeDmg.connect(takeDmg)
+	damage = 10
+	BattleTracker.playerTakeDmg.connect(takeDmg)
 	return
 	
 func takeDmg():
 	health_ui.value = health_ui.value - damage
 	if health_ui.value <= 0:
-		if get_parent().is_in_group("enemy"):
-			BattleTracker.score = BattleTracker.score + scorePoints
-			BattleTracker.spawnEnemy.emit()
 		get_parent().queue_free()

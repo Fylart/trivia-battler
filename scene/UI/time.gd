@@ -10,3 +10,6 @@ func _process(_delta: float) -> void:
 func addTime():
 	timer.wait_time = timer.get_wait_time() + 5
 	timer.start()
+
+func _on_timer_timeout() -> void:
+	get_tree().quit()

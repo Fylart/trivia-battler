@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c8ihg38d0n4f" path="res://scene/enemies/take_dmg_component.gd" id="2_gvyhg"]
 [ext_resource type="Script" uid="uid://pim2ank25mnb" path="res://scene/enemies/test_enemy.gd" id="2_y41ig"]
 
-[node name="enemy" type="Sprite2D"]
+[node name="enemy" type="Sprite2D" groups=["enemy"]]
 texture = ExtResource("1_5bt76")
 script = ExtResource("2_y41ig")
 

@@ -1,16 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dla2uubcsrnoj"]
+[gd_scene load_steps=5 format=3 uid="uid://dla2uubcsrnoj"]
 
+[ext_resource type="Script" uid="uid://baqgsucjqwqbi" path="res://scene/UI/button.gd" id="1_dff0v"]
 [ext_resource type="Texture2D" uid="uid://b11w2rcd4nebs" path="res://icon.svg" id="1_l7crv"]
 [ext_resource type="Script" uid="uid://caefge5skmghu" path="res://scene/UI/time.gd" id="2_g8vc8"]
 [ext_resource type="Script" uid="uid://crd7xk1cppsvw" path="res://scene/UI/score.gd" id="3_p4yup"]
 
 [node name="upperHud" type="Control"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 60
+text = "ll"
+script = ExtResource("1_dff0v")
+
 [node name="life" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 offset_right = 248.0
 offset_bottom = 80.0
@@ -66,3 +78,6 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 50
 text = "Score: 0"
 script = ExtResource("3_p4yup")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="time" method="_on_timer_timeout"]

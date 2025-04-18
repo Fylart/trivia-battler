@@ -2,17 +2,22 @@ extends LineEdit
 @onready var lower_hud: Control = $"../.."
 
 func _ready() -> void:
+	BattleTracker.resumed.connect(focusOnAnswer)
 	grab_focus()
 	return
 	
+func focusOnAnswer():
+	grab_focus()
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		accept_event()
-		grab_focus()
+		#accept_event()
+		#grab_focus()
+		return
 	return
 
 func _on_focus_exited() -> void:
-	grab_focus()
+	#grab_focus()
 	pass # Replace with function body.
 
 
@@ -29,4 +34,3 @@ func _on_text_submitted(playerInput: String) -> void:
 		lower_hud.reRollQuestion()
 	else:
 		BattleTracker.playerTakeDmg.emit()
-		return

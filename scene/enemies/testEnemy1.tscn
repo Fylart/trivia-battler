@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://he06gm0wddw3" path="res://UI/theme.tres" id="2_fgnq7"]
 [ext_resource type="Script" uid="uid://c8ihg38d0n4f" path="res://scene/enemies/take_dmg_component.gd" id="3_5bpdk"]
 
-[node name="enemy" type="Sprite2D"]
+[node name="enemy" type="Sprite2D" groups=["enemy"]]
 self_modulate = Color(1, 0.470588, 0.0901961, 1)
 texture = ExtResource("1_vqmjg")
 script = ExtResource("2_5bpdk")

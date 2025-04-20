@@ -1,29 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddul47hmhgr2t"]
+[gd_scene load_steps=11 format=3 uid="uid://ddul47hmhgr2t"]
 
-[sub_resource type="GDScript" id="GDScript_v85q2"]
-script/source = "extends Button
-
-
-func _on_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scene/testArea.tscn\")
-"
-
-[sub_resource type="GDScript" id="GDScript_tkhra"]
-script/source = "extends Button
-
-var credit:PackedScene = preload(\"res://scene/UI/credit.tscn\")
-
-func _on_pressed() -> void:
-	var instance = credit.instantiate()
-	get_parent().get_parent().add_child(instance)
-"
-
-[sub_resource type="GDScript" id="GDScript_8yjp8"]
-script/source = "extends Button
-
-func _on_pressed() -> void:
-	get_tree().quit()
-"
+[ext_resource type="Texture2D" uid="uid://gb1ke1umljky" path="res://sprite_tool/Night-SchoolBG.png" id="1_tkhra"]
+[ext_resource type="Texture2D" uid="uid://cs5uuwkdl0xji" path="res://sprite_tool/Sprite-Play_Button_Sample.png" id="3_5g6x7"]
+[ext_resource type="Texture2D" uid="uid://ckebwxh76cqb6" path="res://sprite_tool/Sprite-Play_Button_Pressed_Sample.png" id="4_implb"]
+[ext_resource type="Script" uid="uid://dn41mmlbjhex5" path="res://scene/UI/start.gd" id="4_nrcg3"]
+[ext_resource type="Texture2D" uid="uid://ck20aow55xk0f" path="res://sprite_tool/Sprite-Credit_Button_Sample.png" id="5_nrcg3"]
+[ext_resource type="Texture2D" uid="uid://cro241h7lvcy2" path="res://sprite_tool/Sprite-Credit_Button_Pressed_Sample.png" id="6_alcha"]
+[ext_resource type="Texture2D" uid="uid://cryklckb4qq3o" path="res://sprite_tool/Sprite-Quit_Button_Sample.png" id="7_1hmjv"]
+[ext_resource type="Script" uid="uid://bwt4tao7aa0s7" path="res://scene/UI/credit_button.gd" id="7_alcha"]
+[ext_resource type="Texture2D" uid="uid://0dc7aqsnjoqj" path="res://sprite_tool/Sprite-Quit_Button_Pressed_Sample.png" id="8_nrvh8"]
+[ext_resource type="Script" uid="uid://cxowwm1yyfwip" path="res://scene/UI/quit2.gd" id="10_1hmjv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,6 +18,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tkhra")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -47,32 +39,31 @@ offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+alignment = 1
 
 [node name="title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Trivia Battler"
 
-[node name="start" type="Button" parent="VBoxContainer"]
+[node name="START" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Start"
-script = SubResource("GDScript_v85q2")
+texture_normal = ExtResource("3_5g6x7")
+texture_pressed = ExtResource("4_implb")
+script = ExtResource("4_nrcg3")
 
-[node name="credit" type="Button" parent="VBoxContainer"]
+[node name="credit2" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "Credit"
-script = SubResource("GDScript_tkhra")
+texture_normal = ExtResource("5_nrcg3")
+texture_pressed = ExtResource("6_alcha")
+script = ExtResource("7_alcha")
 
-[node name="quit" type="Button" parent="VBoxContainer"]
+[node name="quit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Quit"
-script = SubResource("GDScript_8yjp8")
+texture_normal = ExtResource("7_1hmjv")
+texture_pressed = ExtResource("8_nrvh8")
+script = ExtResource("10_1hmjv")
 
-[connection signal="pressed" from="VBoxContainer/start" to="VBoxContainer/start" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/credit" to="VBoxContainer/credit" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/START" to="VBoxContainer/START" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/credit2" to="VBoxContainer/credit2" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]

@@ -21,17 +21,21 @@ func showGameOver():
 [node name="TestArea" type="Node2D"]
 script = SubResource("GDScript_gykvt")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1194.0
+offset_bottom = 665.0
+
 [node name="Hud" parent="." instance=ExtResource("1_s3vku")]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(-267, -303)
 color = Color(0.125911, 0.125911, 0.125911, 1)
-polygon = PackedVector2Array(2, 801, 2046, 807, 2041, 1180, -209, 1149, -196, 801)
+polygon = PackedVector2Array(2, 801, 2035, 801, 2041, 1146, -198, 1158, -196, 801)
 
 [node name="Player" parent="." instance=ExtResource("2_gykvt")]
-position = Vector2(133, 353)
+position = Vector2(127, 434)
 
 [node name="enemySpawnPoint" type="Marker2D" parent="."]
-position = Vector2(1041, 364)
+position = Vector2(1041, 433)
 gizmo_extents = 46.0
 script = ExtResource("3_gykvt")

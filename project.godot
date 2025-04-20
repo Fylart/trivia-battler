@@ -23,6 +23,10 @@ BattleTracker="*res://scene/globals/battleTracker.gd"
 
 gdscript/warnings/unused_signal=0
 
+[gui]
+
+theme/custom_font="uid://cqeopfdiubpia"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

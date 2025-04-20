@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx7hoqnc75ni6"]
+[gd_scene load_steps=6 format=3 uid="uid://cx7hoqnc75ni6"]
 
+[ext_resource type="Texture2D" uid="uid://csrubt47olisf" path="res://sprite_tool/ui_sprite/GameBG1.png" id="1_1d8vo"]
 [ext_resource type="PackedScene" uid="uid://0amnc5qdungd" path="res://scene/UI/hud.tscn" id="1_s3vku"]
 [ext_resource type="PackedScene" uid="uid://b28sgax660ecc" path="res://scene/player.tscn" id="2_gykvt"]
 [ext_resource type="Script" uid="uid://cdb3sfkosjwug" path="res://scene/enemy_spawn_point.gd" id="3_gykvt"]
@@ -22,20 +23,17 @@ func showGameOver():
 script = SubResource("GDScript_gykvt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1194.0
-offset_bottom = 665.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_1d8vo")
 
 [node name="Hud" parent="." instance=ExtResource("1_s3vku")]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-267, -303)
-color = Color(0.125911, 0.125911, 0.125911, 1)
-polygon = PackedVector2Array(2, 801, 2035, 801, 2041, 1146, -198, 1158, -196, 801)
-
 [node name="Player" parent="." instance=ExtResource("2_gykvt")]
-position = Vector2(127, 434)
+position = Vector2(88, 231)
 
 [node name="enemySpawnPoint" type="Marker2D" parent="."]
-position = Vector2(1041, 433)
+position = Vector2(1066, 259)
 gizmo_extents = 46.0
 script = ExtResource("3_gykvt")

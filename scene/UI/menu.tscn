@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdddefb8ietj2"]
+[gd_scene load_steps=4 format=3 uid="uid://cdddefb8ietj2"]
+
+[ext_resource type="Theme" uid="uid://he06gm0wddw3" path="res://UI/theme.tres" id="1_h8h3c"]
 
 [sub_resource type="GDScript" id="GDScript_ihnfd"]
 script/source = "extends Control
@@ -28,6 +30,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_h8h3c")
 script = SubResource("GDScript_ihnfd")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

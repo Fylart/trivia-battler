@@ -80,6 +80,7 @@ var answer:String
 func _ready() -> void:
 	reRollQuestion()
 
+
 func reRollQuestion():
 	print(questionSet1.size())
 	if not questionSet1.is_empty():

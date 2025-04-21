@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgn4wpfpr63d"]
+[gd_scene load_steps=7 format=3 uid="uid://cgn4wpfpr63d"]
 
 [sub_resource type="GDScript" id="GDScript_mrjlj"]
 script/source = "extends Control
@@ -24,6 +24,9 @@ func loadScore():
 	else:
 		return 0
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki3ag"]
+bg_color = Color(0.122252, 0.122252, 0.122252, 1)
 
 [sub_resource type="GDScript" id="GDScript_ki3ag"]
 script/source = "extends Label
@@ -84,6 +87,7 @@ offset_right = 61.5
 offset_bottom = 42.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ki3ag")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2

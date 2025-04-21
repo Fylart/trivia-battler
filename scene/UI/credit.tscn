@@ -198,7 +198,6 @@ autowrap_mode = 3
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("1_rjnpu")
 text = "return"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://dla2uubcsrnoj"]
+[gd_scene load_steps=6 format=3 uid="uid://dla2uubcsrnoj"]
 
 [ext_resource type="Script" uid="uid://baqgsucjqwqbi" path="res://scene/UI/button.gd" id="1_dff0v"]
 [ext_resource type="Texture2D" uid="uid://b11w2rcd4nebs" path="res://icon.svg" id="1_l7crv"]
 [ext_resource type="Script" uid="uid://caefge5skmghu" path="res://scene/UI/time.gd" id="2_g8vc8"]
 [ext_resource type="Script" uid="uid://crd7xk1cppsvw" path="res://scene/UI/score.gd" id="3_p4yup"]
+
+[sub_resource type="FontFile" id="FontFile_dff0v"]
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
 
 [node name="upperHud" type="Control"]
 custom_minimum_size = Vector2(0, 100)
@@ -13,11 +40,13 @@ anchor_right = 1.0
 grow_horizontal = 2
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(60, 35)
 layout_mode = 1
-offset_right = 80.0
-offset_bottom = 89.0
-theme_override_font_sizes/font_size = 60
+offset_left = 7.0
+offset_right = 67.0
+offset_bottom = 55.0
+theme_override_fonts/font = SubResource("FontFile_dff0v")
+theme_override_font_sizes/font_size = 35
 text = "II"
 script = ExtResource("1_dff0v")
 

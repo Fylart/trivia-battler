@@ -1,5 +1,6 @@
 extends LineEdit
-@onready var lower_hud: Control = $"../.."
+
+@onready var lower_hud: Control = $"../../../.."
 
 func _ready() -> void:
 	BattleTracker.resumed.connect(focusOnAnswer)

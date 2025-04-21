@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://0amnc5qdungd"]
+[gd_scene load_steps=11 format=3 uid="uid://0amnc5qdungd"]
 
 [ext_resource type="PackedScene" uid="uid://dla2uubcsrnoj" path="res://scene/UI/upper_hud.tscn" id="1_etv88"]
 [ext_resource type="Script" uid="uid://w5bbv0705qbk" path="res://scene/UI/lower_hud.gd" id="2_18hx0"]
 [ext_resource type="Script" uid="uid://7yy0a47si4ld" path="res://scene/UI/line_edit.gd" id="2_dmy3u"]
+[ext_resource type="Theme" uid="uid://he06gm0wddw3" path="res://UI/theme.tres" id="3_ajon8"]
 [ext_resource type="Script" uid="uid://dxn8fuvwu6gpq" path="res://scene/UI/question.gd" id="3_vrop6"]
 [ext_resource type="Script" uid="uid://nq7uttxhixjx" path="res://scene/UI/boxes.gd" id="4_losl7"]
 
@@ -16,62 +17,62 @@
 
 [node name="Hud" type="CanvasLayer"]
 
-[node name="upperHud" parent="." instance=ExtResource("1_etv88")]
-offset_left = 1.0
-offset_top = 7.0
-offset_right = 1.0
-offset_bottom = 107.0
-
 [node name="lowerHud" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_18hx0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="lowerHud"]
+[node name="PanelContainer" type="PanelContainer" parent="lowerHud"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = -42.0
-offset_right = 309.0
-offset_bottom = 26.0
+offset_left = -163.0
+offset_top = -69.0
+offset_right = 163.0
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_ajon8")
 
-[node name="question" type="Label" parent="lowerHud/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="lowerHud/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="lowerHud/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="question" type="Label" parent="lowerHud/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 15
 text = "Where did rizal studied?"
 script = ExtResource("3_vrop6")
 
-[node name="boxes" type="HBoxContainer" parent="lowerHud/VBoxContainer"]
+[node name="boxes" type="HBoxContainer" parent="lowerHud/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 script = ExtResource("4_losl7")
 
-[node name="HSeparator" type="HSeparator" parent="lowerHud/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="lowerHud/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 theme_override_styles/separator = SubResource("StyleBoxEmpty_18hx0")
 
-[node name="answer" type="LineEdit" parent="lowerHud/VBoxContainer"]
-custom_minimum_size = Vector2(600, 0)
+[node name="answer" type="LineEdit" parent="lowerHud/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 15
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vrop6")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_te4bq")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ajon8")
@@ -80,5 +81,11 @@ alignment = 1
 keep_editing_on_text_submit = true
 script = ExtResource("2_dmy3u")
 
-[connection signal="focus_exited" from="lowerHud/VBoxContainer/answer" to="lowerHud/VBoxContainer/answer" method="_on_focus_exited"]
-[connection signal="text_submitted" from="lowerHud/VBoxContainer/answer" to="lowerHud/VBoxContainer/answer" method="_on_text_submitted"]
+[node name="upperHud" parent="." instance=ExtResource("1_etv88")]
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 1.0
+offset_bottom = 107.0
+
+[connection signal="focus_exited" from="lowerHud/PanelContainer/MarginContainer/VBoxContainer/answer" to="lowerHud/PanelContainer/MarginContainer/VBoxContainer/answer" method="_on_focus_exited"]
+[connection signal="text_submitted" from="lowerHud/PanelContainer/MarginContainer/VBoxContainer/answer" to="lowerHud/PanelContainer/MarginContainer/VBoxContainer/answer" method="_on_text_submitted"]

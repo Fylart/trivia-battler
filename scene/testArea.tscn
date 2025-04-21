@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cx7hoqnc75ni6"]
 
-[ext_resource type="Texture2D" uid="uid://csrubt47olisf" path="res://sprite_tool/ui_sprite/GameBG1.png" id="1_1d8vo"]
+[ext_resource type="Texture2D" uid="uid://cc57asc5kqqu" path="res://sprite_tool/ui_sprite/GameBG2.png" id="1_1d8vo"]
 [ext_resource type="PackedScene" uid="uid://0amnc5qdungd" path="res://scene/UI/hud.tscn" id="1_s3vku"]
 [ext_resource type="PackedScene" uid="uid://b28sgax660ecc" path="res://scene/player.tscn" id="2_gykvt"]
 [ext_resource type="Script" uid="uid://cdb3sfkosjwug" path="res://scene/enemy_spawn_point.gd" id="3_gykvt"]

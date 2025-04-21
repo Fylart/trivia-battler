@@ -1,5 +1,7 @@
 extends HBoxContainer
-@onready var lower_hud: Control = $"../.."
+
+@onready var lower_hud: Control = $"../../../.."
+
 var box = preload("res://scene/UI/box.tscn")
 var space = preload("res://scene/UI/space.tscn")
 var children_array:Array

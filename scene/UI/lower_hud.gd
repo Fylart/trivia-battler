@@ -69,8 +69,9 @@ var questionSet1:Dictionary = {
 
 var questionsKey
 
-@onready var boxes: HBoxContainer = $VBoxContainer/boxes
-@onready var question: Label = $VBoxContainer/question
+
+@onready var boxes: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/boxes
+@onready var question: Label = $PanelContainer/MarginContainer/VBoxContainer/question
 var questionKey:String
 var answer:String
 

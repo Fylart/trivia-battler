@@ -1,7 +1,21 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://he06gm0wddw3"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://he06gm0wddw3"]
+
+[ext_resource type="Texture2D" uid="uid://dotjpq4nduro6" path="res://sprite_tool/ui_sprite/Sprite-blackboard.png" id="1_go05t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsa4l"]
+atlas = ExtResource("1_go05t")
+region = Rect2(6, 4, 100, 56)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oieh5"]
+texture = SubResource("AtlasTexture_wsa4l")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp4ym"]
 bg_color = Color(0.429234, 0.677871, 0.312328, 1)
 
 [resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_oieh5")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_bp4ym")

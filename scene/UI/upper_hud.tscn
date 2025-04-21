@@ -16,9 +16,9 @@ grow_horizontal = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 1
 offset_right = 80.0
-offset_bottom = 80.0
+offset_bottom = 89.0
 theme_override_font_sizes/font_size = 60
-text = "ll"
+text = "II"
 script = ExtResource("1_dff0v")
 
 [node name="life" type="HBoxContainer" parent="."]

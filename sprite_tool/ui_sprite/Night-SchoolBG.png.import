@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceu1wglnmfs4q"
-path="res://.godot/imported/Sprite-MainChar.png-26ef85566a06724b417fa58c9b7e12aa.ctex"
+uid="uid://04glf4mnhmjj"
+path="res://.godot/imported/Night-SchoolBG.png-5c6b1e1b962bdbbe8a2e65d819a0dab0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite_tool/Sprite-MainChar.png"
-dest_files=["res://.godot/imported/Sprite-MainChar.png-26ef85566a06724b417fa58c9b7e12aa.ctex"]
+source_file="res://sprite_tool/ui_sprite/Night-SchoolBG.png"
+dest_files=["res://.godot/imported/Night-SchoolBG.png-5c6b1e1b962bdbbe8a2e65d819a0dab0.ctex"]
 
 [params]
 

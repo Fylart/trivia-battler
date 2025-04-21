@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://ddul47hmhgr2t"]
 
-[ext_resource type="Texture2D" uid="uid://gb1ke1umljky" path="res://sprite_tool/Night-SchoolBG.png" id="1_tkhra"]
-[ext_resource type="Texture2D" uid="uid://cs5uuwkdl0xji" path="res://sprite_tool/Sprite-Play_Button_Sample.png" id="3_5g6x7"]
-[ext_resource type="Texture2D" uid="uid://ckebwxh76cqb6" path="res://sprite_tool/Sprite-Play_Button_Pressed_Sample.png" id="4_implb"]
+[ext_resource type="Texture2D" uid="uid://04glf4mnhmjj" path="res://sprite_tool/ui_sprite/Night-SchoolBG.png" id="1_tkhra"]
+[ext_resource type="Texture2D" uid="uid://cs5uuwkdl0xji" path="res://sprite_tool/ui_sprite/Sprite-Play_Button_Sample.png" id="3_5g6x7"]
+[ext_resource type="Texture2D" uid="uid://ckebwxh76cqb6" path="res://sprite_tool/ui_sprite/Sprite-Play_Button_Pressed_Sample.png" id="4_implb"]
 [ext_resource type="Script" uid="uid://dn41mmlbjhex5" path="res://scene/UI/start.gd" id="4_nrcg3"]
-[ext_resource type="Texture2D" uid="uid://ck20aow55xk0f" path="res://sprite_tool/Sprite-Credit_Button_Sample.png" id="5_nrcg3"]
-[ext_resource type="Texture2D" uid="uid://cro241h7lvcy2" path="res://sprite_tool/Sprite-Credit_Button_Pressed_Sample.png" id="6_alcha"]
-[ext_resource type="Texture2D" uid="uid://cryklckb4qq3o" path="res://sprite_tool/Sprite-Quit_Button_Sample.png" id="7_1hmjv"]
+[ext_resource type="Texture2D" uid="uid://ck20aow55xk0f" path="res://sprite_tool/ui_sprite/Sprite-Credit_Button_Sample.png" id="5_nrcg3"]
+[ext_resource type="Texture2D" uid="uid://cro241h7lvcy2" path="res://sprite_tool/ui_sprite/Sprite-Credit_Button_Pressed_Sample.png" id="6_alcha"]
+[ext_resource type="Texture2D" uid="uid://cryklckb4qq3o" path="res://sprite_tool/ui_sprite/Sprite-Quit_Button_Sample.png" id="7_1hmjv"]
 [ext_resource type="Script" uid="uid://bwt4tao7aa0s7" path="res://scene/UI/credit_button.gd" id="7_alcha"]
-[ext_resource type="Texture2D" uid="uid://0dc7aqsnjoqj" path="res://sprite_tool/Sprite-Quit_Button_Pressed_Sample.png" id="8_nrvh8"]
+[ext_resource type="Texture2D" uid="uid://0dc7aqsnjoqj" path="res://sprite_tool/ui_sprite/Sprite-Quit_Button_Pressed_Sample.png" id="8_nrvh8"]
 [ext_resource type="Script" uid="uid://cxowwm1yyfwip" path="res://scene/UI/quit2.gd" id="10_1hmjv"]
 
 [node name="MainMenu" type="Control"]
@@ -27,39 +27,46 @@ texture = ExtResource("1_tkhra")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -52.5
-offset_right = 50.0
-offset_bottom = 52.5
+anchors_preset = -1
+anchor_left = 0.291667
+anchor_top = 0.342593
+anchor_right = 0.678819
+anchor_bottom = 0.811728
+offset_right = -223.0
+offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 theme_override_constants/separation = 10
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Trivia Battler"
 
 [node name="START" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 texture_normal = ExtResource("3_5g6x7")
 texture_pressed = ExtResource("4_implb")
 script = ExtResource("4_nrcg3")
 
 [node name="credit2" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("5_nrcg3")
 texture_pressed = ExtResource("6_alcha")
 script = ExtResource("7_alcha")
 
 [node name="quit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("7_1hmjv")
 texture_pressed = ExtResource("8_nrvh8")
 script = ExtResource("10_1hmjv")

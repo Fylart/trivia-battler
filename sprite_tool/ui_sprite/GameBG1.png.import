@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck20aow55xk0f"
-path="res://.godot/imported/Sprite-Credit_Button_Sample.png-da2f92d8504e0585bd76f172ae04c553.ctex"
+uid="uid://csrubt47olisf"
+path="res://.godot/imported/GameBG1.png-e4569d7301d835fd8080406853dcfa81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite_tool/Sprite-Credit_Button_Sample.png"
-dest_files=["res://.godot/imported/Sprite-Credit_Button_Sample.png-da2f92d8504e0585bd76f172ae04c553.ctex"]
+source_file="res://sprite_tool/ui_sprite/GameBG1.png"
+dest_files=["res://.godot/imported/GameBG1.png-e4569d7301d835fd8080406853dcfa81.ctex"]
 
 [params]
 

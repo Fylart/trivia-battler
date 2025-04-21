@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckebwxh76cqb6"
-path="res://.godot/imported/Sprite-Play_Button_Pressed_Sample.png-9500a038375b92af49907d9c7e3469cb.ctex"
+uid="uid://cjqpwk7mtianc"
+path="res://.godot/imported/Sprite-Villain3.2.png-2f2e448854f4730d0c642f5a40687ec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite_tool/Sprite-Play_Button_Pressed_Sample.png"
-dest_files=["res://.godot/imported/Sprite-Play_Button_Pressed_Sample.png-9500a038375b92af49907d9c7e3469cb.ctex"]
+source_file="res://sprite_tool/enemie/Sprite-Villain3.2.png"
+dest_files=["res://.godot/imported/Sprite-Villain3.2.png-2f2e448854f4730d0c642f5a40687ec6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cro241h7lvcy2"
-path="res://.godot/imported/Sprite-Credit_Button_Pressed_Sample.png-79925f186fb582430a4c74039eb79af4.ctex"
+uid="uid://0dc7aqsnjoqj"
+path="res://.godot/imported/Sprite-Quit_Button_Pressed_Sample.png-61b3ba9a5628d037fd25f52321a420e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite_tool/Sprite-Credit_Button_Pressed_Sample.png"
-dest_files=["res://.godot/imported/Sprite-Credit_Button_Pressed_Sample.png-79925f186fb582430a4c74039eb79af4.ctex"]
+source_file="res://sprite_tool/ui_sprite/Sprite-Quit_Button_Pressed_Sample.png"
+dest_files=["res://.godot/imported/Sprite-Quit_Button_Pressed_Sample.png-61b3ba9a5628d037fd25f52321a420e9.ctex"]
 
 [params]
 

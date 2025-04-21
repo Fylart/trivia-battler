@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b28sgax660ecc"]
 
-[ext_resource type="Texture2D" uid="uid://ceu1wglnmfs4q" path="res://sprite_tool/Sprite-MainChar.png" id="1_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://ceu1wglnmfs4q" path="res://sprite_tool/character/Sprite-MainChar.png" id="1_ct4mp"]
 [ext_resource type="Script" uid="uid://bu3735rmhlv3n" path="res://scene/player.gd" id="2_mewty"]
 [ext_resource type="Theme" uid="uid://he06gm0wddw3" path="res://UI/theme.tres" id="3_ct4mp"]
 [ext_resource type="Script" uid="uid://dqd7flxxx3owg" path="res://scene/dmg_component.gd" id="4_s4jxa"]
